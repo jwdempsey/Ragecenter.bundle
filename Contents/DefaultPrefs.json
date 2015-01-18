@@ -1,0 +1,23 @@
+[
+    {
+        "id": "username",
+        "type": "text",
+        "label": "Username",
+        "default": ""
+    },
+    {
+        "id": "password",
+        "type": "text",
+        "label": "Password",
+        "default": "",
+        "option": "hidden",
+        "secure": "true"
+    },
+    {
+        "id": "bitrate",
+        "type": "enum",
+        "label": "Stream quality",
+        "values": ["Auto", "5000", "3000", "1600"],
+        "default": "Auto"
+    },
+]
