@@ -3,6 +3,8 @@ Ragecenter.bundle
 
 A Plex plugin for ragecenter.com. A valid ragecenter.com account is required for this plugin.
 
+NOTE: Live streams will only work for clients that support encrypted HLS streams.
+
 Installation Instructions
 -------------------------
 1.  Copy Ragecenter.bundle to your plugin directory
