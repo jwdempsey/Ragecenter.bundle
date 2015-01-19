@@ -5,6 +5,14 @@ A Plex plugin for ragecenter.com. A valid ragecenter.com account is required for
 
 NOTE: Live streams will only work for clients that support encrypted HLS streams.
 
+Clients that support Live Streams:
+* Roku
+* iOS devices
+* Safari on OSX
+
+Not Supported:
+* Plex/Web
+
 Installation Instructions
 -------------------------
 1.  Copy Ragecenter.bundle to your plugin directory
