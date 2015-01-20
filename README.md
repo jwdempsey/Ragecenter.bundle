@@ -3,17 +3,17 @@ Ragecenter.bundle
 
 A Plex plugin for ragecenter.com. A valid ragecenter.com account is required for this plugin.
 
-NOTE: Live streams will only work for clients that support encrypted HLS streams.
+**NOTE:** Live streams will only work for clients that support encrypted HLS streams.
 
-Supported:
+**Supported:**
 * Roku
 * iOS devices
 * Safari on OSX
 
-Not Supported:
+**Not Supported:**
 * Plex/Web
 
-Untested:
+**Untested:**
 * PHT
 * Android
 * Chromecast
