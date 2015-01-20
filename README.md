@@ -5,13 +5,25 @@ A Plex plugin for ragecenter.com. A valid ragecenter.com account is required for
 
 NOTE: Live streams will only work for clients that support encrypted HLS streams.
 
-Clients that support Live Streams:
+Supported:
 * Roku
 * iOS devices
 * Safari on OSX
 
 Not Supported:
 * Plex/Web
+
+Untested:
+* PHT
+* Android
+* Chromecast
+* Windows 8
+* Xbox
+* Playstation
+* Smart TVs
+* Amazon Fire TV
+* Google TV
+
 
 Installation Instructions
 -------------------------
