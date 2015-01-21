@@ -10,7 +10,7 @@ ICON = 'icon-default.png'
 PREFIX = '/video/ragecenter'
 UA = [
 	'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; Xbox; Xbox One)',
-	'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; Xbox)'
+	'Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; Xbox)',
 	'Roku/DVP-4.3 (024.03E01057A), Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B314 Safari/531.21.10'
 ]
 CODE_FIX = {"PHX":"ARI"}
@@ -82,7 +82,7 @@ def ArchivedSeason(season):
 		sortedGames[key] = games
 
 	oc = ObjectContainer(title2=season)
-	for i in sorted(sortedGames):
+	for i in sorted(sortedGames, reverse=True):
 		oc.add(DirectoryObject(key = Callback(ArchivedGamesForDate, season=season, date=i), title="%s-%s-%s" % (i[:4], i[4:6], i[6:])))
 
 	return oc
@@ -147,14 +147,11 @@ def LiveGames():
 	for g in schedule['games']:
 		gameInformation = g['gameInformation']
 		title = '%s vs. %s' % (gameInformation['awayTeam']['teamName'], gameInformation['homeTeam']['teamName'])
-		if gameInformation['gs'] < 3:
-			summary = gameInformation['easternGameTime']
-		else:
-			summary = gameInformation['currentGameTime']
-		if 'gameStory' in g:
-			oc.add(DirectoryObject(key = Callback(LiveGameFeeds, game=g), title=title, summary=summary, thumb=g['gameStory']['storyThumbnail']))
-		else:
-			oc.add(DirectoryObject(key = Callback(LiveGameFeeds, game=g), title=title, summary=summary))
+		summary = gameInformation['easternGameTime'] if gameInformation['gs'] < 3 else gameInformation['currentGameTime']
+		thumb = g['gameStory']['storyThumbnail'] if 'gameStory' in g else None
+
+		oc.add(DirectoryObject(key = Callback(LiveGameFeeds, game=g), title=title, summary=summary, thumb=thumb))
+
 	return oc
 
 @route(PREFIX + '/livegamefeeds', game=dict)
