@@ -8,10 +8,10 @@ A Plex plugin for ragecenter.com. A valid ragecenter.com account is required for
 **Supported:**
 * Roku
 * iOS devices
-* Safari on OSX
+* Plex/Web for Safari on OSX
 
 **Not Supported:**
-* Plex/Web
+* Plex/Web for all other browsers and operating systems
 
 **Untested:**
 * PHT
